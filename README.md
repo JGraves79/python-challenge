@@ -1,2 +1,2 @@
 # python-challenge
-Pythong Assignment 3 for Bootcamp
+Python Assignment 3 for Bootcamp
