@@ -8,11 +8,12 @@ import csv
 import os
 
 base_dir = os.path.dirname(__file__)
+
 # Files to load and output (update with correct file paths)
-# file_to_load = "C:\\Users\\X579430\\Documents\\Python Scripts\\python-challenge\\PyPoll\\Resources\\election_data.csv"
+
 file_to_load = os.path.join(base_dir, "Resources", "election_data.csv")  # Input file path
 file_to_output = os.path.join(base_dir, "analysis", "election_analysis.txt")  # Output file path
-# file_to_output ="C:\\Users\\X579430\Documents\\Python Scripts\\python-challenge\\PyPoll\\analysis\\election_analysis.txt"
+
 # Initialize variables to track the election data
 total_votes = 0  # Track the total number of votes cast
 candidate_options = []  # candidate names
