@@ -8,11 +8,11 @@ import os
 import csv
 from datetime import datetime
 
+main_dir = os.path.dirname(__file__) # best practice suggestion by Copilot to run the relative reference code
+
 # Files to load and output (update with correct file paths)
-file_to_load = "C:\\Users\\X579430\\Documents\\Python Scripts\\python-challenge\\PyBank\\Resources\\budget_data.csv"
-# file_to_load = os.path.join("Resources", "budget_data.csv")  # Input file path 
-# file_to_output = os.path.join("analysis", "budget_analysis.txt")  # Output file path
-file_to_output = "C:\\Users\\X579430\\Documents\\Python Scripts\\python-challenge\\PyBank\\analysis\\budget_analysis.txt"
+file_to_load = os.path.join(main_dir, "Resources", "budget_data.csv")  # Input file path 
+file_to_output = os.path.join(main_dir, "analysis", "budget_analysis.txt")  # Output file path
 
 # Define variables to track the financial data
 total_months = 0
