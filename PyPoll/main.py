@@ -7,15 +7,16 @@ Created on Fri Sep 20 10:24:17 2024
 import csv
 import os
 
+base_dir = os.path.dirname(__file__)
 # Files to load and output (update with correct file paths)
-file_to_load = "C:\\Users\\X579430\\Documents\\Python Scripts\\python-challenge\\PyPoll\\Resources\\election_data.csv"
-# file_to_load = os.path.join("Resources", "election_data.csv")  # Input file path
-# file_to_output = os.path.join("analysis", "election_analysis.txt")  # Output file path
-file_to_output ="C:\\Users\\X579430\Documents\\Python Scripts\\python-challenge\\PyPoll\\analysis\\election_analysis.txt"
+# file_to_load = "C:\\Users\\X579430\\Documents\\Python Scripts\\python-challenge\\PyPoll\\Resources\\election_data.csv"
+file_to_load = os.path.join(base_dir, "Resources", "election_data.csv")  # Input file path
+file_to_output = os.path.join(base_dir, "analysis", "election_analysis.txt")  # Output file path
+# file_to_output ="C:\\Users\\X579430\Documents\\Python Scripts\\python-challenge\\PyPoll\\analysis\\election_analysis.txt"
 # Initialize variables to track the election data
 total_votes = 0  # Track the total number of votes cast
-candidate_options = []  # List to track candidate names
-candidate_votes = {}  # Dictionary to track vote counts for each candidate
+candidate_options = []  # candidate names
+candidate_votes = {}  # vote counts for each candidate
 
 # Winning Candidate and Winning Count Tracker
 winning_candidate = ""
@@ -51,39 +52,35 @@ with open(file_to_load) as election_data:
 # Open a text file to save the output
 with open(file_to_output, "w") as txt_file:
     # Print the total vote count (to terminal)
-    election_results = (
-        f"\nElection Results\n"
+    election_results = (f"\nElection Results\n"
         f"-------------------------\n"
         f"Total Votes: {total_votes}\n"
-        f"-------------------------\n"
-    )
+        f"-------------------------\n")
+    
     print(election_results, end="")
     txt_file.write(election_results)
 
     # Loop through the candidates to determine vote percentages and identify the winner
     for candidate in candidate_votes:
         # Get the vote count and calculate the percentage
-        votes = candidate_votes[candidate]
-        vote_percentage = float(votes) / float(total_votes) * 100
+        votes_count = candidate_votes[candidate]
+        vote_percentage = float(votes_count) / float(total_votes) * 100
 
         # Update the winning candidate if this one has more votes
-        if (votes > winning_count) and (vote_percentage > winning_percentage):
-            winning_count = votes
+        if (votes_count > winning_count) and (vote_percentage > winning_percentage):
+            winning_count = votes_count
             winning_candidate = candidate
             winning_percentage = vote_percentage
 
         # Print and save each candidate's vote count and percentage
-        candidate_results = f"{candidate}: {vote_percentage:.3f}% ({votes})\n"
+        candidate_results = f"{candidate}: {vote_percentage:.3f}% ({votes_count})\n"
         print(candidate_results, end="")
         txt_file.write(candidate_results)
 
     # Generate and print the winning candidate summary
-    winning_candidate_summary = (
-        f"-------------------------\n"
+    winning_candidate_summary = (f"-------------------------\n"
         f"Winner: {winning_candidate}\n"
-        f"Winning Vote Count: {winning_count}\n"
-        f"Winning Percentage: {winning_percentage:.3f}%\n"
-        f"-------------------------\n"
-    )
+        f"-------------------------\n")
+    
     print(winning_candidate_summary)
     txt_file.write(winning_candidate_summary)
