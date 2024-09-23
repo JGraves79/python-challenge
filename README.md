@@ -1,14 +1,14 @@
 # python-challenge
 Python Assignment 3 for Bootcamp
 
-## Description
+# Description
 Python scripts for two separate data files - one for banking analysis and one for voting
 
 In the first file, we are reading from the budget_data.csv file to find the following information and print it to a .txt file.
 
 In the second file, we are given poll data from a file called election_data.csv and run the program to find the winner of the election. We then print this to a .txt file in the analysis folder.
 
-## Table of Contents
+# Table of Contents
 
 - Installation
 - Usage
@@ -16,14 +16,14 @@ In the second file, we are given poll data from a file called election_data.csv 
 - Contributors
 - License
 
-## Installation
+# Installation
 To get started with this project, clone the repository and install the necessary dependencies.
 
 ```bash
 git clone https://github.com/JGraves79/python-challenge.git
 cd python-challenge
 
-## Usage
+# Usage
 
 Run the .py programs in either of the following files
 
@@ -32,7 +32,7 @@ python PyPoll/main.py
 
 Running the programs creates .txt files to create the following results from the assigment.
 
-## Assignments
+# Assignments
 
 PyBank
 The total number of months included in the dataset
@@ -56,10 +56,10 @@ The total number of votes each candidate won
 
 The winner of the election based on popular vote
 
-## Contributors
+# Contributors
 
 Contributors to this assignment included Jordan Graves, Chase Arnett, Kyle Faulkner, and Paige Manguiat.
 
-## License
+# License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
